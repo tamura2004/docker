@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitBucket</title>
+    <link rel="icon" href="/gitb/assets/common/images/gitbucket.png" type="image/vnd.microsoft.icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/gitb/assets/vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/gitb/assets/vendors/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/gitb/assets/vendors/datepicker/css/datepicker.css" rel="stylesheet">
+    <link href="/gitb/assets/vendors/colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet">
+    <link href="/gitb/assets/vendors/google-code-prettify/prettify.css" type="text/css" rel="stylesheet"/>
+    <link href="/gitb/assets/vendors/facebox/facebox.css" rel="stylesheet"/>
+    <link href="/gitb/assets/common/css/gitbucket.css" rel="stylesheet">
+    <script src="/gitb/assets/vendors/jquery/jquery-1.9.1.js"></script>
+    <script src="/gitb/assets/vendors/dropzone/dropzone.js"></script>
+    <script src="/gitb/assets/common/js/validation.js"></script>
+    <script src="/gitb/assets/common/js/gitbucket.js"></script>
+    <script src="/gitb/assets/vendors/bootstrap/js/bootstrap.js"></script>
+    <script src="/gitb/assets/vendors/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/gitb/assets/vendors/colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="/gitb/assets/vendors/google-code-prettify/prettify.js"></script>
+    <script src="/gitb/assets/vendors/zclip/ZeroClipboard.min.js"></script>
+    <script src="/gitb/assets/vendors/elastic/jquery.elastic.source.js"></script>
+    <script src="/gitb/assets/vendors/facebox/facebox.js"></script>
+  </head>
+  <body>
+    <form id="search" action="/gitb/search" method="POST">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/gitb/">
+              <img src="/gitb/assets/common/images/gitbucket.png" style="width: 24px; height: 24px;"/>GitBucket
+
+                <span class="header-version">3.2</span>
+
+            </a>
+            <div class="nav-collapse collapse pull-right header-menu">
+
+
+                <a href="/gitb/signin?redirect=%2F" class="btn btn-last" id="signin">Sign in</a>
+
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+<div class="dashboard-nav">
+  <div class="container">
+    <a href="/gitb/"  class="active">
+      <img src="/gitb/assets/common/images/menu-feed.png">
+      News Feed
+    </a>
+
+  </div>
+</div>
+<style type="text/css">
+div.dashboard-nav {
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+  height: 32px;
+  margin-bottom: 20px;
+}
+
+div.dashboard-nav a  {
+  line-height: 10px;
+  margin-left: 20px;
+  padding-bottom: 13px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #888;
+}
+
+div.dashboard-nav a:hover  {
+  text-decoration: none;
+}
+
+div.dashboard-nav a.active {
+  border-bottom: 2px solid #bb4444;
+  color: #333;
+}
+</style>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8">
+        <div class="pull-right">
+          <a href="/gitb/activities.atom"><img src="/gitb/assets/common/images/feed.png" alt="activities"></a>
+        </div>
+
+
+
+  No activity
+
+
+
+
+
+
+
+
+
+      </div>
+
+      <div class="span4">
+
+
+
+<table class="table table-bordered">
+  <tr>
+    <th class="metal">
+
+      Sign in
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <form action="/gitb/signin" method="POST" validate="true">
+        <label for="userName">Username:</label>
+        <span id="error-userName" class="error"></span>
+        <input type="text" name="userName" id="userName" style="width: 95%"/>
+        <label for="password">Password:</label>
+        <span id="error-password" class="error"></span>
+        <input type="password" name="password" id="password" style="width: 95%"/>
+        <div>
+          <input type="submit" class="btn btn-success" value="Sign in"/>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+        <table class="table table-bordered">
+          <tr>
+            <th class="metal">
+              Recent updated repositories
+            </th>
+          </tr>
+
+            <tr>
+              <td>No repositories</td>
+            </tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+    <script>
+      $(function(){
+        $('#search').submit(function(){
+          return $.trim($(this).find('input[name=query]').val()) != '';
+        });
+      });
+    </script>
+
+  </body>
+</html>
+

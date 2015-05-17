@@ -1,0 +1,7 @@
+gitb:
+  build: gitbucket
+  ports:
+    - "8080:8080"
+  volumes:
+    - /home/core/data:/data
+  command: "java -jar gitbucket.war --prefix=/gitb --gitbucket.home=/data"
